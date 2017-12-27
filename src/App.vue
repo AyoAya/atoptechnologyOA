@@ -35,4 +35,7 @@ export default {
     margin-bottom: 20px
 .el-textarea__inner
     min-height: 200px !important
+.remove-form-label-margin
+    .el-form-item__content
+        margin-left: 0 !important
 </style>
