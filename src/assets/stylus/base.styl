@@ -7,6 +7,14 @@ ul, ol, dl
 	margin: 0
 p
 	line-height: 180%
+hr
+	margin: 20px 0
+	background-color: bd-color
+	border: none
+	height: 1px
+a
+	text-decoration: none
+	color: primary-color
 body
 	color: common-text-color
 	font-size: 14px
@@ -15,8 +23,18 @@ body
 
 /* 复写elementUI部分组件样样式*/
 
+/* 复写mavonEditor编辑器样式 */
+.v-note-wrapper .v-note-panel .v-note-edit.divarea-wrapper .content-input-wrapper,
+.v-note-wrapper .v-note-panel .v-note-show .v-show-content, .v-note-wrapper .v-note-panel .v-note-show .v-show-content-html
+	padding: 20px !important
 
 /* 全局通用样式 */
+.copy-info
+	margin-top: 30px
+	font-size: 13px
+	color: secondary-text-color
+	text-align: right
+
 .fl-card
 	background: white-color
 	margin-bottom: 20px
@@ -70,3 +88,50 @@ body
 	.fl-form-body
 		width: 700px
 		margin-left: 35px
+
+.discuss
+	display: flex
+	border-bottom: solid 1px bd-color
+	min-height: 200px
+	&:last-child
+		border-bottom: none
+	.discuss-l, .discuss-r
+		padding: 20px
+		box-sizing: border-box
+	.discuss-l
+		width: 150px
+		border-right: solid 1px bd-color
+		text-align: center
+		.avatar
+			border-radius: 50%
+	.discuss-r
+		flex: 1
+		.context
+			margin-bottom: 40px
+			.reply-box
+				background: #f9f9f9
+				padding: 20px
+				margin-top: 20px
+				.reply
+					display: flex
+					margin-bottom: 10px
+					min-height: 34px
+					&:last-child
+						margin-bottom: 0
+					div:first-child
+						width: 34px
+						text-align: right
+					div:last-child
+						flex: 1
+						padding-left: 10px
+						padding-top: 4px
+		.footer
+			font-size: 12px
+			color: secondary-text-color
+			&:after
+				content: ''
+				clear: both
+			div:first-child
+				float: left
+			div:last-child
+				float: right

@@ -26,7 +26,7 @@
 		<div id="main">
 			<div class="sidebar" ref="sidebar">
 				<el-menu
-				default-active="/dashboard"
+				:default-active="menuActive"
 				class="el-menu-vertical-demo"
 				background-color="#06060b"
 				text-color="#fff"
@@ -48,6 +48,10 @@
 			</div>
 			<div class="context" ref="context">
 				<router-view/>
+				<div class="copy-info">
+					<p>Copyright &copy; 2014-2017 Atop All Rights Reserved.</p>
+					<p>Contact: developer.fulwin@outlook.com / chixiang.gong@outlook.com.</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -58,16 +62,24 @@
 
 	export default {
 		created() {
-			// console.log(MenuList)
+			this.switchMenuActive()
 		},
 		data() {
 			return {
+                menuActive: '/dashboard',
 				menulist: MenuList,
 				isCollapse: false
 			}
 		},
+		watch: {
+		    "$route": "switchMenuActive"
+		},
 		methods: {
-
+            switchMenuActive() {
+                let fullPathArr = this.$route.fullPath.split('/')
+                let currentPath = fullPathArr.length > 2 ? '/' + fullPathArr[1] + '/' + fullPathArr[2] + '/' + fullPathArr[3] : '/' + fullPathArr[1];
+                this.menuActive = currentPath
+			}
 		}
 	}
 </script>
