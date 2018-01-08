@@ -135,3 +135,51 @@ body
 				float: left
 			div:last-child
 				float: right
+				
+
+.xk-card
+	width: 100%
+	&:after
+		content: ''
+		display: block
+		clear: both
+	.xk-card-left
+		margin-right: -20px
+		float: left
+		width: 65%
+		box-sizing: border-box	
+		.box-card-item
+			background: white-color
+			margin-bottom: 20px
+			padding: 20px
+			&:last-child
+				margin-bottom: 0
+		
+			.xk-span
+				width: 80px
+				font-weight: 600
+				color: #666
+				display: inline-block
+				text-align: right
+				margin-right: 10px
+			
+				
+			
+	.xk-card-right
+		float: right
+		width: 35%
+		box-sizing: border-box
+		.right-fix
+			background:white-color
+			padding: 20px
+			margin-left: 20px
+			div
+				.xk-span
+					width: 100px
+					font-weight: 600
+					color: #666
+					display: inline-block
+					text-align: right
+					margin-right: 10px
+			
+		

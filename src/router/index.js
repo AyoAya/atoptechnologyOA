@@ -8,7 +8,12 @@ import ProjectDetail from '@/components/project/detail'
 import Sample from '@/components/sample/index'
 import Product from '@/components/product/index'
 import Software from '@/components/software/index'
+import SoftwareCreate from '@/components/software/create'
+import SoftwareDetail from '@/components/software/detail'
 import Compatibility from '@/components/compatibility/index'
+import CompatibilityCreate from '@/components/compatibility/create'
+import CompatibilityDetail from '@/components/compatibility/detail'
+import CompatibilityEdit from '@/components/compatibility/edit'
 
 Vue.use(Router)
 
@@ -65,6 +70,36 @@ export default new Router({
 				path: 'rd/compatibility',
       			name: '兼容表',
 				component: Compatibility,
+				meta: { requireAuth: true }
+			},
+			{
+				path: 'rd/compatibility/create',
+      			name: '创建兼容表',
+				component: CompatibilityCreate,
+				meta: { requireAuth: true }
+			},
+			{
+				path: 'rd/compatibility/detail',
+      			name: '兼容表详情',
+				component: CompatibilityDetail,
+				meta: { requireAuth: true }
+			},
+			{
+				path: 'rd/compatibility/edit',
+      			name: '编辑兼容表',
+				component: CompatibilityEdit,
+				meta: { requireAuth: true }
+			},
+			{
+				path: 'rd/software/create',
+      			name: '添加软件',
+				component: SoftwareCreate,
+				meta: { requireAuth: true }
+			},
+			{
+				path: 'rd/software/detail',
+      			name: '软件详情',
+				component: SoftwareDetail,
 				meta: { requireAuth: true }
 			},
       ]
